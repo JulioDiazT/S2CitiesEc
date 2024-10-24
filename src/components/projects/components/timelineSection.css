@@ -1,0 +1,196 @@
+:root {
+  --primary-color: #f7be12; /* Amarillo */
+  --secondary-color: #1e6794; /* Azul */
+  --tertiary-color: #E55218; /* Naranja */
+  --font-primary: "Rubik", sans-serif;
+  --font-secondary: "Karla", sans-serif;
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Sección de la línea de tiempo */
+.timeline-section {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  transform: translateY(50px);
+}
+
+.timeline-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* Título con subrayado */
+.timeline-title {
+  font-size: 2rem;
+  color: var(--primary-color);
+  font-family: var(--font-primary);
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.timeline-title::after {
+  content: "";
+  display: block;
+  width: 15%;
+  height: 5px;
+  background-color: var(--primary-color);
+  margin: 10px auto 0;
+}
+
+/* Contenedor de la línea de tiempo */
+.timeline-container {
+  display: flex;
+  position: relative;
+  gap: 40px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  max-width: 100%;
+  padding-bottom: 20px;
+}
+
+/* Línea amarilla de fondo */
+.timeline-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: var(--primary-color);
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+/* Cada ítem de la línea de tiempo */
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 250px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: scale(1.05);
+}
+
+/* Círculo de la numeración */
+.timeline-circle {
+  width: 50px;
+  height: 50px;
+  background-color: var(--tertiary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  z-index: 2;
+}
+
+.timeline-content {
+  text-align: center;
+}
+
+.timeline-activity-title {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+.timeline-description {
+  font-family: var(--font-secondary);
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Responsividad para pantallas grandes (computadoras) */
+@media (min-width: 1024px) {
+  .timeline-container {
+    flex-direction: row; /* Layout horizontal en computadoras */
+  }
+}
+
+/* Responsividad para tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .timeline-container {
+    flex-direction: column; /* Layout vertical en tablets */
+    gap: 20px;
+  }
+
+  .timeline-title {
+    font-size: 3rem; /* Tamaño más grande para tablets */
+  }
+
+  .timeline-circle {
+    width: 55px; /* Aumenta ligeramente el tamaño del círculo */
+    height: 55px;
+    font-size: 1.3rem; /* Aumenta tamaño del texto dentro del círculo */
+  }
+
+  .timeline-content {
+    font-size: 1.2rem; /* Aumenta tamaño del texto */
+  }
+
+  .timeline-line {
+    left: 50%; /* Centra la línea */
+    top: 0;
+    height: 100%;
+    width: 5px;
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsividad para móviles */
+@media (max-width: 767px) {
+  .timeline-container {
+    flex-direction: column; /* Layout vertical en móviles */
+    gap: 20px;
+  }
+
+  .timeline-circle {
+    width: 45px; /* Tamaño adecuado para móviles */
+    height: 45px;
+    font-size: 1.2rem;
+  }
+
+  .timeline-content {
+    font-size: 1rem;
+  }
+
+  .timeline-line {
+    left: 50%; /* Centra la línea */
+    top: 0;
+    height: 100%;
+    width: 5px;
+    transform: translateX(-50%);
+  }
+
+  .timeline-title {
+    font-size: 2.5rem;
+  }
+}

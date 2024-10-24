@@ -1,0 +1,136 @@
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.nav {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  border-radius: 8px;
+  width: 96%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  transition: top 0.3s ease-in-out, opacity 0.3s;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav.visible {
+  top: 0;
+  opacity: 1;
+}
+
+.nav.hidden {
+  top: -80px;
+  opacity: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.logoS2C {
+  height: 60px;
+}
+
+.hamburger {
+  display: none;
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  margin-left: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #1e6694;
+  font-weight: bold;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.3rem;
+  /* Aumenta el tamaño del texto */
+  transition: color 0.3s, transform 0.3s;
+  /* Transición de color y transformación */
+}
+
+.menu a:hover {
+  color: #f7be12;
+  font-size:larger;
+}
+
+/* Switcher de idioma */
+.language-switcher button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.language-switcher img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Responsividad para pantallas móviles */
+@media (max-width: 768px) {
+  .nav {
+    width: 91%;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .logoS2C {
+    height: 45px;
+  }
+
+  .menu {
+    flex-direction: column;
+    position: absolute;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    top: 60px;
+    display: none;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .menu li {
+    margin: 10px 0;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  .nav {
+    padding: 10px;
+  }
+
+  .menu a {
+    font-size: 1.5rem;
+    /* Texto más grande en móviles */
+  }
+}

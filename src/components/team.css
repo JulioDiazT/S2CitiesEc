@@ -1,0 +1,182 @@
+:root {
+    --primary-color: #f7be12;
+    --secondary-color: #1e6794;
+    --tertiary-color: #E55218;
+    --font-primary: 'Rubik', sans-serif;
+    --font-secondary: 'Karla', sans-serif;
+}
+
+/* Sección principal del equipo */
+.team-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ajustamos el título para que no se salga del contenedor */
+.team-title {
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    position: relative;
+    width: 100%;
+    /* Ocupar todo el ancho de la sección */
+    max-width: 1200px;
+    /* Limitar el ancho máximo para pantallas grandes */
+}
+
+.team-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary-color);
+}
+
+/* Contenedor para los miembros del equipo */
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    /* Aseguramos que ocupe todo el ancho disponible */
+    max-width: 1200px;
+    /* Máximo ancho de la sección */
+    margin: 0 auto;
+}
+
+/* Estilo para cada tarjeta de miembro del equipo */
+.team-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    width: 100%;
+    /* Ajustamos para que ocupe el ancho completo en pantallas pequeñas */
+    max-width: 280px;
+    /* Limitamos el tamaño máximo para evitar que se vea demasiado grande */
+    cursor: pointer;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor para garantizar que la imagen sea siempre redonda */
+.team-photo-wrapper {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de las fotos */
+.team-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Estilos del texto en la tarjeta */
+.team-name {
+    font-family: var(--font-primary);
+    font-size: 1.6rem;
+    color: var(--tertiary-color);
+    margin-bottom: 10px;
+}
+
+.team-age,
+.team-role,
+.team-description {
+    font-family: var(--font-secondary);
+    color: #1e6794;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    margin-top: 2px;
+}
+.team-role{
+    font-weight: bold;
+}
+
+.team-description {
+    font-style: italic;
+    color: #1e6794;
+}
+
+/* Responsividad para pantallas medianas */
+@media (max-width: 1024px) {
+    .team-section {
+        padding: 0%;
+    }
+
+    .team-container {
+        max-width: 90%;
+    }
+
+    .team-card {
+        max-width: 80%;
+    }
+
+    .team-title {
+        font-size: 2rem;
+    }
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .team-section {
+       padding: 0%;
+    }
+
+    .team-container {
+        width: 100%;
+    }
+
+    .team-card {
+        width: 100%;
+    }
+
+    .team-photo-wrapper {
+        width: 140px;
+        height: 140px;
+    }
+
+    .team-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* Responsividad para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .team-container {
+        max-width: 100%;
+    }
+
+    .team-card {
+        width: 100%;
+        /* Se asegura que las tarjetas no se salgan del contenedor */
+    }
+
+    .team-photo-wrapper {
+        width: 100px;
+        height: 100px;
+    }
+
+    .team-title {
+        font-size: 1.6rem;
+    }
+}

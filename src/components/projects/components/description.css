@@ -1,0 +1,92 @@
+:root {
+    --primary-color: #f7be12; /* Amarillo */
+    --secondary-color: #1e6794; /* Azul */
+    --tertiary-color: #E55218; /* Naranja */
+    --font-primary: "Rubik", sans-serif;
+    --font-secondary: "Karla", sans-serif;
+  }
+  
+  /* Animación de aparición */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .highlight2{
+    font-weight: bold;
+    color: #E55218;
+  }
+  
+  /* Sección de la descripción */
+  .urbano-description-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    transform: translateY(50px);
+  }
+  
+  .urbano-description-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeIn 1s ease-out forwards;
+  }
+  
+  /* Contenedor de la descripción */
+  .description-container {
+    max-width: 85%;
+    margin: 0 auto;
+    padding: 20px;
+   
+   
+  }
+  
+  /* Texto de la descripción */
+  .description-text {
+    font-size: 1.2rem;
+    color:  var(--secondary-color);
+    font-family: var(--font-secondary);
+    line-height: 1.6;
+  }
+  
+  /* Responsividad: Pantallas grandes */
+  @media (min-width: 1024px) {
+    .description-title {
+      font-size: 3rem;
+    }
+    
+    .description-text {
+      font-size: 1.4rem;
+    }
+  }
+  
+  /* Responsividad: Tablets */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .description-title {
+      font-size: 2.8rem;
+    }
+    
+    .description-text {
+      font-size: 1.3rem;
+    }
+  }
+  
+  /* Responsividad: Móviles */
+  @media (max-width: 767px) {
+    .description-title {
+      font-size: 2rem;
+    }
+    
+    .description-text {
+      font-size: 1.1rem;
+    }
+  }
+  

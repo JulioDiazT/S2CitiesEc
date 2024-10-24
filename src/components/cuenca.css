@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Rubik:ital,wght@0,300..900&display=swap');
+
+/* Sección principal */
+.section-cuenca {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 60px auto;
+    background: linear-gradient(145deg, #f7f7f7, #e6e6e6); /* Fondo con degradado suave */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 40px;
+    gap: 30px;
+    transition: all 0.3s ease;
+    opacity: 0; /* Ocultar inicialmente */
+    transform: translateY(50px); /* Desplazar inicialmente */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Añadir la clase animate cuando sea visible */
+.section-cuenca.animate {
+    opacity: 1;
+    transform: translateY(0); /* Regresar a la posición original */
+}
+
+/* Información de Cuenca */
+.cuenca-info {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Título */
+.cuenca-title {
+    font-size: 3rem; /* Tamaño del título */
+    color: #E55218; /* Color del título */
+    margin-bottom: 20px;
+    font-family: "Rubik", sans-serif;
+    text-transform: uppercase; /* Mayúsculas */
+    letter-spacing: 0.1rem; /* Espaciado entre letras */
+    position: relative;
+    opacity: 0; /* Ocultar inicialmente */
+    transform: translateY(20px); /* Desplazar inicialmente */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Subrayado animado para el título */
+.cuenca-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: #ED6A60; /* Color subrayado */
+    transition: width 1s ease;
+    width: 0; /* Ocultar inicialmente */
+}
+
+/* Título visible cuando la clase animate se añade */
+.section-cuenca.animate .cuenca-title {
+    opacity: 1;
+    transform: translateY(0); /* El título regresa a su posición */
+}
+
+.section-cuenca.animate .cuenca-title::after {
+    width: 50px; /* Subrayado aparece */
+}
+
+/* Descripción */
+.cuenca-description {
+    font-size: 1.3rem; /* Tamaño de la descripción */
+    color: #1e6794; /* Color azul */
+    line-height: 1.8; /* Espaciado entre líneas */
+    font-family: "Karla", sans-serif;
+    max-width: 650px;
+    text-align: justify;
+    padding: 20px 0;
+    opacity: 0; /* Ocultar inicialmente */
+    transform: translateY(20px); /* Desplazar inicialmente */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Animar la descripción cuando la clase animate se añade */
+.section-cuenca.animate .cuenca-description {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Imagen */
+.cuenca-image {
+    width: 45%;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px); /* Desplazar inicialmente */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Imagen visible cuando la clase animate se añade */
+.section-cuenca.animate .cuenca-image {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hover para la imagen */
+.cuenca-image:hover {
+    transform: scale(1.08); /* Efecto de zoom al hacer hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); /* Sombra más profunda al hacer hover */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes growLine {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 50px;
+    }
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    .section-cuenca {
+        flex-direction: column;
+        padding: 20px;
+        width: 90%;
+        gap: 20px;
+    }
+
+    .cuenca-info {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .cuenca-title {
+        font-size: 2.2rem; /* Reducir el tamaño en pantallas pequeñas */
+    }
+
+    .cuenca-description {
+        font-size: 1.1rem; /* Reducir el tamaño en pantallas pequeñas */
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+    }
+
+    .cuenca-image {
+        width: 80%; /* Imagen más grande en pantallas pequeñas */
+    padding-top: 0%;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-cuenca {
+        padding: 15px;
+    }
+
+    .cuenca-title {
+        font-size: 1.8rem; /* Título más pequeño en pantallas pequeñas */
+    }
+
+    .cuenca-description {
+        font-size: 1rem;
+    }
+
+    .cuenca-image {
+        width: 100%; /* Imagen ocupa todo el ancho en pantallas pequeñas */
+    }
+}

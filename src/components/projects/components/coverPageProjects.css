@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&family=Karla:wght@200..800&display=swap');
+
+:root {
+  --primary-color: #f7be12; /* Amarillo */
+  --secondary-color: #1e6794; /* Azul */
+  --background-color: #f4f4f4; /* Color de fondo gris */
+  --text-color: #1e6794; /* Color de texto */
+  --highlight-color: #f7be12; /* Color de resaltado */
+  --highlight-bg: black; /* Fondo negro para el resaltado */
+  --font-primary: "Rubik", sans-serif;
+  --font-secondary: "Karla", sans-serif;
+}
+
+/* Sección principal de la portada */
+.portada-section {
+  width: 100%;
+  margin-bottom: 30px;
+  background-color: var(--background-color);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.portada-section.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Imagen de portada */
+.portada-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+/* Contenedor de texto */
+.text-container {
+  margin-top: 10px; /* Reducir el espacio entre la imagen y el texto */
+}
+
+/* Título del proyecto */
+.project-title {
+  font-size: 3.5rem;
+  color: var(--primary-color);
+  font-family: var(--font-primary);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+/* Subrayado animado del título */
+.project-title::after {
+  content: '';
+  width: 120px;
+  height: 4px;
+  background-color: var(--primary-color);
+  display: block;
+  margin: 10px auto 0;
+  animation: slideIn 0.8s forwards;
+}
+
+/* Animación de subrayado */
+@keyframes slideIn {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 120px;
+  }
+}
+
+/* Descripción del proyecto */
+.project-description {
+  font-size: 1.4rem;
+  color: var(--text-color);
+  font-family: var(--font-secondary);
+  line-height: 1.8;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px;
+  font-weight: 400;
+}
+
+/* Resaltado de texto */
+.highlight {
+  background-color: var(--secondary-color); /* Fondo negro */
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: bold;
+  color: var(--highlight-color); /* Color de texto amarillo */
+  transform: rotate(-2deg); /* Ligera inclinación */
+  display: inline-block;
+}
+
+/* Responsividad para pantallas medianas */
+@media (max-width: 1024px) {
+  .project-title {
+    font-size: 3rem;
+  }
+
+  .project-description {
+    font-size: 1.2rem;
+  }
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+  .project-title {
+    font-size: 2.5rem;
+  }
+
+  .project-description {
+    font-size: 1.1rem;
+  }
+
+  .portada-image {
+    height: 300px; /* Reducir el tamaño de la imagen en pantallas pequeñas */
+  }
+}

@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+/* Sección principal del voluntariado */
+.volunteer-section {
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.volunteer-section.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Contenedor principal */
+.volunteer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+/* Imagen */
+.volunteer-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Texto */
+.volunteer-text {
+  max-width: 600px;
+  text-align: left;
+  font-family: "Karla", sans-serif;
+  /* Aplicando la fuente Karla */
+}
+
+/* Título */
+.volunteer-title {
+  font-size: 3rem;
+  color: #ED6A60;
+  font-family: 'Rubik', sans-serif;
+  /* Aplicando la fuente Rubik */
+  margin-bottom: 20px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.volunteer-section.animate .volunteer-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Subrayado dinámico del título */
+.volunteer-title::after {
+  content: "";
+  width: 0;
+  height: 4px;
+  background-color: #ED6A60;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  transition: width 1s ease;
+}
+
+.volunteer-section.animate .volunteer-title::after {
+  width: 80px;
+}
+
+/* Descripción */
+.volunteer-description {
+  font-size: 1.1rem;
+  color: #1e6794;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-family: "Karla", sans-serif;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.volunteer-section.animate .volunteer-description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Botón */
+.volunteer-button {
+  background-color: #1e6794;
+  color: #fff;
+  font-family: "Karla", sans-serif;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease transform 0.3s ease;
+}
+
+.volunteer-button:hover {
+  background-color: #f7be12;
+  transform: scale(1.1);
+}
+
+/* Responsividad */
+@media (max-width: 1024px) {
+  .volunteer-title {
+    font-size: 2.2rem;
+    margin-top: 0%;
+    text-align: center;
+  }
+
+  .volunteer-button-container {
+    display: flex;
+    justify-content: center;
+    /* Centra el botón horizontalmente */
+    align-items: center;
+    /* Centra el botón verticalmente si es necesario */
+    margin-top: 20px;
+    /* Agrega un margen superior si es necesario */
+  }
+
+  .volunteer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .volunteer-image {
+    margin-bottom: 20px;
+  }
+
+  .volunteer-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .volunteer-button {
+    justify-content: center;
+    /* Centra el botón horizontalmente */
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .volunteer-title {
+    font-size: 2.2rem;
+    padding-top: 0%;
+  }
+
+  .volunteer-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .volunteer-title {
+    font-size: 1.8rem;
+  }
+
+  .volunteer-description {
+    font-size: 0.9rem;
+  }
+
+  .volunteer-title::after {
+    width: 50px;
+  }
+
+  .volunteer-text {
+    text-align: center;
+  }
+}

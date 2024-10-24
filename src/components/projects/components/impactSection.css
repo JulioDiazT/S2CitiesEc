@@ -1,0 +1,194 @@
+:root {
+  --primary-color: #f7be12;
+  /* Yellow */
+  --secondary-color: #1e6794;
+  /* Blue */
+  --tertiary-color: #E55218;
+  /* Orange */
+  --font-primary: "Rubik", sans-serif;
+  --font-secondary: "Karla", sans-serif;
+}
+
+/* Impact section styling */
+.impact-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.impact-section.animate {
+  opacity: 1;
+  transform: translateY(0);
+  padding-bottom: 0%;
+}
+
+.impact-title {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  font-family: var(--font-primary);
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.impact-title::after {
+  content: '';
+  width: 120px;
+  height: 4px;
+  background-color: var(--primary-color);
+  display: block;
+  margin: 10px auto;
+  animation: slideIn 0.8s forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 120px;
+  }
+}
+
+/* Impact container */
+.impact-container {
+  display: flex;
+  justify-content: center;
+  /* Center items */
+  flex-wrap: wrap;
+  gap: 10px;
+  /* Less space between items */
+  margin: 0 auto;
+  max-width: 1200px;
+  /* Limits the width for better alignment */
+}
+
+/* Impact item */
+.impact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.impact-item:hover {
+  transform: scale(1.05);
+}
+
+.impact-item:hover .impact-icon,
+.impact-item:hover .impact-number,
+.impact-item:hover .impact-description {
+  color: var( --tertiary-color);
+}
+
+/* Icon styling */
+.impact-icon {
+  font-size: 4rem;
+  color: var(--secondary-color);
+  margin-bottom: 5px;
+  /* Less space between icon and number */
+  transition: color 0.3s ease;
+}
+
+.impact-item:hover .impact-icon {
+  color: var( --tertiary-color);
+}
+
+/* Text container */
+.impact-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+  font-family: var(--font-primary);
+  margin-bottom: 0%;
+  margin-top: 0%;
+}
+
+.impact-item:hover .impact-number {
+  color: var( --tertiary-color);
+  /* Number changes color */
+}
+
+.impact-description {
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+  font-family: var(--font-secondary);
+  font-weight: bold;
+  text-align: center;
+  /* Ensures the text is centered below the number */
+  margin-top: 5px;
+  /* Adjust spacing between number and description */
+}
+
+.impact-item:hover .impact-description {
+  color: var( --tertiary-color);
+  /* Description changes color */
+}
+
+/* Responsiveness: Larger screens */
+@media (min-width: 1200px) {
+  .impact-container {
+    max-width: 90%;
+  }
+
+  .impact-item {
+    flex-basis: calc(25% - 20px);
+    /* Four items in a row */
+  }
+}
+
+/* Responsiveness: Tablets and medium screens */
+@media (max-width: 1024px) {
+  .impact-container {
+    justify-content: center;
+  }
+
+  .impact-number {
+    margin-bottom: 0%;
+    margin-top: 10px;
+  }
+
+
+
+
+  .impact-item {
+    padding-left: 0%;
+  }
+}
+
+/* Responsiveness: Small screens and mobile */
+@media (max-width: 768px) {
+  .impact-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .impact-item {
+    width: 100%;
+    /* Full width for mobile */
+  }
+}
+
+/* Responsiveness: Extra small screens */
+@media (max-width: 480px) {
+  .impact-container {
+    gap: 20px;
+  }
+
+  .impact-icon {
+    font-size: 3rem;
+  }
+
+  .impact-number {
+    font-size: 2rem;
+  }
+
+  .impact-description {
+    font-size: 1rem;
+  }
+}

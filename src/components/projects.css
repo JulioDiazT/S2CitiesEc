@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Rubik:ital,wght@0,300..900&display=swap');
+
+/* Sección principal */
+.proyectos-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f2f2f2;
+    opacity: 0; /* Ocultar inicialmente */
+    transform: translateY(50px); /* Desplazar inicialmente */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Añadir la clase animate cuando sea visible */
+.proyectos-section.animate {
+    opacity: 1;
+    transform: translateY(0); /* Regresar a la posición original */
+}
+
+/* Título de la sección */
+.proyectos-title {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #E55218;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    position: relative;
+    opacity: 0; /* Ocultar inicialmente */
+    transform: translateY(20px); /* Desplazamiento inicial */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Línea decorativa debajo del título */
+.proyectos-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #ED6A60;
+    transition: width 1s ease;
+    width: 0; /* Ocultar inicialmente */
+}
+
+/* Mostrar la línea decorativa cuando la sección sea visible */
+.proyectos-section.animate .proyectos-title::after {
+    width: 60px;
+}
+
+/* Mostrar el título cuando la sección es visible */
+.proyectos-section.animate .proyectos-title {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Contenedor de las tarjetas */
+.proyectos-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    opacity: 0;
+    transform: translateY(30px); /* Desplazamiento inicial */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Mostrar las tarjetas cuando la sección es visible */
+.proyectos-section.animate .proyectos-container {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Tarjetas individuales */
+.proyecto-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    width: 30%; /* Para asegurar que entren tres tarjetas en pantallas grandes */
+    min-width: 280px; /* Mínimo tamaño de las tarjetas en pantallas pequeñas */
+    max-width: 400px; /* Máximo tamaño para que no sean demasiado anchas */
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    opacity: 0;
+    transform: translateY(30px); /* Desplazamiento inicial */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Mostrar las tarjetas con animación */
+.proyectos-section.animate .proyecto-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efecto hover en las tarjetas */
+.proyecto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen de la tarjeta */
+.proyecto-imagen {
+    width: 100%;
+    border-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.proyecto-card:hover .proyecto-imagen {
+    transform: scale(1.05);
+}
+
+/* Nombre del proyecto */
+.proyecto-nombre {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 15px 0;
+    color: #E55218;
+    font-family: 'Rubik', sans-serif;
+}
+
+/* Descripción del proyecto */
+.proyecto-descripcion {
+    font-size: 1rem;
+    color: #1e6794;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-family: 'Karla', sans-serif;
+}
+
+/* Botón de leer más */
+.leer-mas {
+    background-color: #f7be12;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.leer-mas:hover {
+    background-color: #E55218;
+}
+
+/* Media Queries para pantallas medianas */
+@media (max-width: 1024px) {
+    .proyectos-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .proyecto-card {
+        flex-basis: 45%;
+        margin-bottom: 40px;
+    }
+
+    .proyecto-imagen {
+        height: 180px;
+    }
+
+    .proyectos-title {
+        font-size: 2rem;
+    }
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    .proyectos-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .proyecto-card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .proyecto-imagen {
+        height: 150px;
+    }
+}

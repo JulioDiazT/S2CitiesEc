@@ -1,0 +1,75 @@
+.word-cloud-container {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 85%; /* Ajusta el contenedor para que ocupe el 85% de la pantalla */
+  }
+  
+  .word-cloud-title {
+    font-size: 2.8rem;
+    color: #f7be12;
+    font-family: 'Rubik', sans-serif;
+    position: relative;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+  .word-cloud-title::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background-color: #f7be12;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .word-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+    max-width: 100%; /* Asegura que el grid ocupe todo el ancho */
+  }
+  
+  .word {
+    font-family: 'Rubik', sans-serif;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .word:hover {
+    transform: scale(1.2); /* Agranda la palabra al pasar el cursor */
+    color: #f7be12;
+  }
+  
+  /* Responsividad para pantallas más pequeñas (tablets y teléfonos móviles) */
+  @media (max-width: 768px) {
+    .word-cloud-title {
+      font-size: 1.8rem; /* Reduce el tamaño del título */
+    }
+  
+    .word {
+      font-size: 0.8rem; /* Ajusta el tamaño de las palabras para pantallas pequeñas */
+    }
+  
+    .word-grid {
+      gap: 5px; /* Reduce el espacio entre palabras */
+    }
+  }
+  
+  /* Ajuste adicional para pantallas aún más pequeñas */
+  @media (max-width: 480px) {
+    .word-cloud-title {
+      font-size: 2rem; /* Reduce aún más el tamaño del título */
+    }
+  
+    .word {
+      font-size: smaller; /* Reduce aún más el tamaño de las palabras */
+    }
+  
+    .word-grid {
+      gap: 4px; /* Reduce aún más el espacio entre palabras */
+    }
+  }
+  

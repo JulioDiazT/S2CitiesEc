@@ -1,0 +1,142 @@
+/* Sección principal */
+.podcast-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.podcast-section.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Contenedor principal */
+.podcast-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Título del podcast */
+.podcast-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #f7be12;
+    font-family: 'Rubik', sans-serif;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+/* Descripción */
+.podcast-description {
+    font-size: 1.2rem;
+    color: #1e6794;
+    font-family: 'Karla', sans-serif;
+    margin-bottom: 30px;
+    text-align: left;
+    margin-right: 20%;
+}
+
+/* Imagen del podcast */
+.podcast-image {
+    max-width: 400px;
+    text-align: right; /* Alineado a la derecha */
+}
+
+.podcast-img {
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto hover sobre la imagen */
+.podcast-link:hover .podcast-img {
+    transform: scale(1.05);
+}
+
+/* Contenedor del llamado a la acción */
+.cta-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Alinea el call to action a la derecha */
+    margin-top: 10px;
+    text-align: right;
+    margin-right: 20px;
+}
+
+/* Texto del llamado a la acción */
+.cta-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1e6794;
+    margin-right: 10px;
+    font-family: 'Rubik', sans-serif;
+    text-align: right;
+}
+
+/* Flecha curvada */
+.arrow-container {
+    display: inline-block;
+}
+
+.arrow {
+    font-size: 2rem;
+    color: #e55218;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Efecto hover en la flecha */
+.podcast-link:hover .arrow {
+    color: #f7be12;
+    transform: scale(1.2);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .podcast-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        display: flex;
+    }
+    .podcast-title{
+text-align: center;
+    }
+    .podcast-description {
+        width: 100%;
+        text-align: justify;
+    }
+
+    .cta-text {
+        font-size: 1.3rem;
+    }
+
+    .arrow {
+        font-size: 1.8rem;
+        transform: rotate(90deg); /* Apunta hacia la derecha */
+    }
+
+    .podcast-image {
+        text-align: center; /* Cambia la imagen al centro en pantallas pequeñas */
+    }
+
+    .cta-container {
+        justify-content: center; /* Centra el CTA en pantallas pequeñas */
+    display: flex;
+    }
+
+    /* Rotación hacia abajo cuando la imagen esté debajo del texto */
+    .arrow-container {
+        transform: rotate(270deg) scaleX(-1); /* Flecha rotada y en espejo */
+        transition: transform 0.3s ease;
+    }
+
+    .podcast-link:hover .arrow {
+        transform: rotate(90deg), scale(1.2), scaleX(-1); /* Efecto hover con la flecha apuntando hacia abajo */
+    }
+}

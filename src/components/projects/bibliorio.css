@@ -1,0 +1,150 @@
+/* Sección principal de impacto */
+.b-impact-section {
+  padding: 40px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+/* Título de la sección */
+.b-impact-title {
+  font-size: 2.5rem;
+  color: #ffb400; /* Color amarillo */
+  font-weight: bold;
+  margin-bottom: 30px;
+  font-family: 'Rubik', sans-serif; /* Tipografía para el título */
+}
+
+/* Línea debajo del título */
+.b-impact-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: #ffb400;
+  margin: 10px auto 0;
+}
+
+/* Contenedor para organizar los items */
+.b-impact-container {
+  display:grid;
+  grid-template-columns: repeat(4, 2fr); /* 4 elementos por fila */
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-items: center; 
+}
+
+/* Estilos para cada elemento de impacto */
+.b-impact-item {
+  text-align: center;
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Estilos para los íconos */
+.b-impact-icon {
+  font-size: 4rem;
+  color: #1e6794; /* Color azul oscuro para los íconos */
+  transition: color 0.3s ease;
+}
+
+/* Estilos para los números */
+.b-counter-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #1e6794; /* Color azul oscuro para los números */
+  margin: 10px 0;
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-family: 'Rubik', sans-serif; /* Tipografía para los números */
+}
+
+/* Estilos para la descripción debajo de los números */
+.b-impact-description {
+  font-size: 1.1rem;
+  color: #1e6794; /* Color azul oscuro para la descripción */
+  text-transform: uppercase;
+  font-family: 'Rubik', sans-serif;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+
+/* Efecto hover (cambiar color al pasar el cursor) */
+.b-impact-item:hover .b-impact-icon,
+.b-impact-item:hover .b-counter-number,
+.b-impact-item:hover .b-impact-description {
+  color:#ED6A60;
+  transform: scale(1.1); /* Crece ligeramente */
+}
+
+/* Responsividad para pantallas medianas (tablets) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .b-impact-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 elementos por fila en tablets */
+    gap: 30px;
+  }
+
+  .b-impact-title {
+    font-size: 2rem;
+  }
+
+  .b-counter-number {
+    font-size: 2.5rem;
+  }
+
+  .b-impact-icon {
+    font-size: 3.5rem;
+  }
+
+  .b-impact-description {
+    font-size: 1rem;
+  }
+}
+
+/* Responsividad para pantallas pequeñas (celulares) */
+@media (max-width: 768px) {
+  .b-impact-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 elementos por fila en móviles */
+    gap: 20px;
+  }
+
+  .b-impact-title {
+    font-size: 1.8rem;
+  }
+
+  .b-counter-number {
+    font-size: 2.2rem;
+  }
+
+  .b-impact-icon {
+    font-size: 3rem;
+  }
+
+  .b-impact-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Responsividad para pantallas muy pequeñas (móviles pequeños) */
+@media (max-width: 480px) {
+  .b-impact-container {
+    grid-template-columns: 1fr; /* 1 elemento por fila en móviles pequeños */
+    gap: 15px;
+  }
+
+  .b-impact-title {
+    font-size: 1.6rem;
+  }
+
+  .b-counter-number {
+    font-size: 2rem;
+  }
+
+  .b-impact-icon {
+    font-size: 2.5rem;
+  }
+
+  .b-impact-description {
+    font-size: 0.8rem;
+  }
+}
