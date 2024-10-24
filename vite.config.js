@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/S2Cities/', // Asegúrate de que esto sea correcto
+  base: '/S2CitiesEc/', // Asegúrate de que esto sea correcto
   assetsInclude: ['**/*.JPG'],
 });
